@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="templates"/>
+	<classpathentry kind="src" path="routes"/>
+	<classpathentry kind="src" path="public-html"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry kind="src" path="tutorial"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
