@@ -18,7 +18,8 @@ var templarOptions = { engine: config.engine, folder: config.templates };
 Templar.loadFolder(config.templates);
 
 router.addRoute('/*', require('./routes/static.js'));
-router.addRoute('/', require('./routes/tutorial.js'));
+// router.addRoute('/', require('./routes/tutorial.js'));
+router.addRoute('/', require('./routes/static.js'));
 
 http.createServer(function (req, res) {
   res.error = ErrorPage(req, res, {

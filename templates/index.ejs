@@ -14,27 +14,13 @@
 </head>
 <body>
 	<div id="content">
-		<h1>Debugging JavaScript<br>in a Standalone Node.js Web Application</h1>
-		<h2>Basics</h2>
-		<ol class="basicsSection">
-		<li>Structure of the project is described <a href="overview.html">here</a>
-		<li><a href="poc.html">POC </a>
-		<li>Open file with the first part of the tutorial: <code>tutorial/1. Basics.js</code> in the editor. 
-		    Note:  If line numbers do not show, right-click in the left margin of the editor and select 
-		    Show Line Numbers.
-		<li>Now let's add a breakpoint! Double-click in the left margin of 
-		line 11 (<code>data.basics = processJson(json);</code>). A blue circle appears in the margin to indicate a breakpoint.
-		<li>Reload the page in your favorite browser. Eclipse switches to the Debug perspective when the breakpoint is hit. Note:  If the breakpoint wasn't  
-		hit, ensure that a blue circle is on line 11.
-		<li>Continue the tutorial. Start on line 5 in the <code>tutorial/1. Basics.js</code> file and complete the steps listed in the comments.</ol>
-		<p class="basicsSection done" style="display:none">
-		Done! More of the tutorial is coming soon!
-		<p class="basicsSection done" style="display:none">
-		In the meanwhile you can learn about all of JavaScript debugger features 
-		by going through Debugging JavaScript in Java EE Application tutorial.
-		<script>
-			$("<%=basics %>").toggle(); 
-		</script>
+		<h1>Overview of the tutorial project structure</h1>
+		<ul>
+			<li>This is a simple HTTP server, which serves it's content on port 8080. Main file is
+			<code>server.js</code>. It registers routers for particular URL patterns.
+			<li>Static HTML content is served from <code>public_html</code> folder through
+			router <code>routes/static.js</code>. 
+		</ul>   
+		
 	</div>
 </body>
-</html>
