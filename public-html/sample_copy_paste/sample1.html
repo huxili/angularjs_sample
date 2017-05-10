@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests interactions bureautique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+
+    function copyAsText() {
+        document.addEventListener('copy', function(e){
+            e.clipboardData.clearData();
+            e.clipboardData.setData('text/plain', 'NomATRL2, Type=Military fixed wind, x=48.8607436, y=2.3442814');
+            e.preventDefault();
+       });
+        document.execCommand('copy');
+    }
+
+    function copyAsTable() {
+        document.addEventListener('copy', function(e){
+            e.clipboardData.clearData();
+            e.clipboardData.setData('text/html', '<table><tr><td><B>Nom</B></td><td>Type</td><td>Hostilité</td><td>Nationalité</td><td>Code APP-06(B)</td><td>X</td><td>Y</td></tr><tr><td>ATL2</td><td>Military fixed wind</td><td>Friend</td><td>France</td><td>SFA-MF---------</td><td>48.8607436</td><td>2.3442814</td></tr><tr><td>ATL2</td><td>Military fixed wind</td><td>Friend</td><td>France</td><td>SFA-MF---------</td><td>48.8607436</td><td>2.3442814</td></tr><tr><td>ATL2</td><td>Military fixed wind</td><td>Friend</td><td>France</td><td>SFA-MF---------</td><td>48.8607436</td><td>2.3442814</td></tr><tr><td>ATL2</td><td>Military fixed wind</td><td>Friend</td><td>France</td><td>SFA-MF---------</td><td>48.8607436</td><td>2.3442814</td></tr><tr><td>ATL2</td><td>Military fixed wind</td><td>Friend</td><td>France</td><td>SFA-MF---------</td><td>48.8607436</td><td>2.3442814</td></tr></table>');
+            e.preventDefault();
+        });
+        document.execCommand('copy');
+    }
+
+   
+   function copyAsImagePNG() {
+        document.addEventListener('copy', function(e){
+            e.clipboardData.clearData();
+            e.clipboardData.setData('text/html', '<html><body><img src="http://localhost:8080/sample_copy_paste/images/sample.png"></body></html>');
+            e.preventDefault();
+            
+        });
+        document.execCommand('copy');
+    }
+
+    function copyAsImageSVG() {
+        document.addEventListener('copy', function(e){
+            e.clipboardData.clearData();
+            e.clipboardData.setData('text/html', '<html><body><img src="http://localhost:8080/sample_copy_paste/images/sample.svg"></body></html>');
+            e.preventDefault();
+            
+        });
+        document.execCommand('copy');
+    }
+
+
+    </script>
+    <button onclick="copyAsText()">Copy Text</button><br><br>
+    <button onclick="copyAsTable()">Copy Table</button><br><br>
+    <div onclick="copyAsImagePNG()">
+         <p>Copy PNG - OK</p>
+         <img src="images/sample.png" width="50" /> 
+    </div>
+    
+    <div onclick="copyAsImageSVG()" >
+         <p>Copy SVG - KO </p>
+         <img src="images/sample.svg" width="50" /> 
+    </div>
+    
+</body>
+</html>
