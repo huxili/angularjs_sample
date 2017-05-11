@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<html lang="en-GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="author" content="The CSS Ninja">
+	<meta name="keywords" content="Drag and drop, HTML5, DownloadURL, setData, dataTransfer">
+	<meta name="description" content="How to create reverse drag and drop functionality like Gmail in Chrome 5 and upwards">
+	<meta name="robots" content="all">
+	<meta name="copyright" content="The CSS Ninja">
+	
+	<link rel="stylesheet" type="text/css" href="_styles.css" media="screen">
+	
+	<title>Drag a file from a website to your filesystem like Gmail does | The CSS Ninja</title>
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Drag out any of these links to your dekstop</h1>
+		
+		<a href="http://localhost:8080/sample_drag_drop/images/sample.svg" id="dragout" class="dragme" draggable="true" 
+		   data-downloadurl="application/svg+xml:sample.svg:http://localhost:8080/sample_drag_drop/images/sample.svg">Drag SVG - KO Office</a>
+		
+		<a href="http://localhost:8080/sample_drag_drop/images/sample.png" id="dragout2" class="dragme" draggable="true" 
+		   data-downloadurl="image/png:sample.png:http://localhost:8080/sample_drag_drop/images/sample.png">Drag PNG - KO Office</a>
+	</div>
+	
+
+	<script type="text/javascript">
+	
+		var files = [document.getElementById("dragout"),document.getElementById("dragout2"),document.getElementById("dragout3")],
+			fileDetails = [];
+		
+		
+		fileDetails[0] = files[0].getAttribute("data-downloadurl");
+		fileDetails[1] = files[1].getAttribute("data-downloadurl");
+		
+		
+		files[0].addEventListener("dragstart",function(evt){
+			evt.dataTransfer.setData("DownloadURL",fileDetails[0]);
+		},false);
+		files[1].addEventListener("dragstart",function(evt){
+			evt.dataTransfer.setData("DownloadURL",fileDetails[1]);
+		},false);
+
+	</script>
+
+</body>
+</html>

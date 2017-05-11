@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html lang="en-GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="author" content="The CSS Ninja">
+	<meta name="keywords" content="Drag and drop, HTML5, DownloadURL, setData, dataTransfer">
+	<meta name="description" content="How to create reverse drag and drop functionality like Gmail in Chrome 5 and upwards">
+	<meta name="robots" content="all">
+	<meta name="copyright" content="The CSS Ninja">
+	
+	<link rel="stylesheet" type="text/css" href="_styles.css" media="screen">
+	
+	<title>Drag a file from a website to your filesystem like Gmail does | The CSS Ninja</title>
+</head>
+<body>
+	
+	<div class="container">
+		
+        <div id="dragout2" draggable="true" class="dragme">
+			  <h1>PNG Drag - OK Office</h1>
+              <img src="http://localhost:8080/sample_drag_drop/images/sample.png" >
+		</div>
+
+		<div id="dragout"  draggable="true" class="dragme">
+			  <h1>SVG Drag - KO Office</h1>
+              <img src="http://localhost:8080/sample_drag_drop/images/sample.svg">
+		</div>
+		
+	</div>
+	
+
+	<script type="text/javascript">
+	
+	    function handleDragStart(evt) {
+			this.style.opacity = '0.2';
+			evt.dataTransfer.clearData();
+			var data = '<html><body>' + this.innerHTML + '</body></html>'; 
+			evt.dataTransfer.setData('text/html', data);
+		}
+
+		function handleDragLeave(evt) {
+			this.style.opacity = '1';
+		}
+
+	    var dragElm1 = document.getElementById("dragout");
+		var dragElm2 = document.getElementById("dragout2");
+
+		dragElm1.addEventListener("dragstart", handleDragStart, false);
+		dragElm2.addEventListener("dragstart", handleDragStart, false);
+		dragElm1.addEventListener("dragleave", handleDragLeave, false);
+	    dragElm2.addEventListener("dragleave", handleDragLeave, false);
+	</script>
+
+</body>
+</html>
